@@ -5,7 +5,7 @@
 #
 # print(datetime.date.today())
 # print(datetime.datetime.today())
-# print(datetime.datetime).now().time()
+# print(datetime.datetime.now().time())
 
 # 2 Iš paketo datetime importuoti modulį date. Atsispausdinti šiandienos datą
 
