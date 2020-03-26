@@ -13,7 +13,7 @@
 #
 # print(date.today())
 
-# 3 Iš paketo datetime importuoti modulį date. Atsispausdinti šiandienos datą
+# 3 Iš paketo datetime importuoti modulį date kaip data (as data). Atsispausdinti šiandienos datą.
 
 from datetime import date as data
 
