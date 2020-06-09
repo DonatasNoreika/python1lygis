@@ -18,7 +18,7 @@ print(stringai)
 
 # arba
 
-sakinys = filter(lambda x: type(x) is str, sarasas)
+sakinys = [x for x in sarasas if type(x) is str]
 print(" ".join(sakinys))
 
 # Suskaičiuotų ir atspausdintų, kiek sąrašę yra loginių (boolean)
