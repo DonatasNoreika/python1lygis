@@ -1,9 +1,9 @@
-skaicius = 0
 suma = 0
 
-while skaicius >= 0:
+while True:
     skaicius = int(input("Įveskite skaičių: "))
-	if skaicius >= 0:
-		suma += skaicius
-else:
-    print(suma)
+    if skaicius < 0:
+        break
+    suma += skaicius
+
+print(suma)
