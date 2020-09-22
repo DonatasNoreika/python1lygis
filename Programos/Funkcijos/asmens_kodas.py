@@ -30,20 +30,12 @@ def asmens_kodo_generavimas(lytis, gimimo_data, eiles_numeris):
     pirmas_skaicius = ""
 
     data_split = gimimo_data.split("-")
-    metai = int(data_split[0])
+    metai = int(data_split[0][:2])
 
-    if lytis == "vyras" and metai < 1900:
-        pirmas_skaicius = "1"
-    if lytis == "moteris" and metai < 1900:
-        pirmas_skaicius = "2"
-    if lytis == "vyras" and (metai >= 1900 and metai < 2000):
-        pirmas_skaicius = "3"
-    if lytis == "moteris" and (metai >= 1900 and metai < 2000):
-        pirmas_skaicius = "4"
-    if lytis == "vyras" and (metai >= 2000 and metai < 2100):
-        pirmas_skaicius = "5"
-    if lytis == "moteris" and (metai >= 2000 and metai < 2100):
-        pirmas_skaicius = "6"
+    if lytis == "vyras":
+        pirmas_skaicius = str((int(metai) - 18) * 2 + 1)
+    else:
+        pirmas_skaicius = str((int(metai) - 18) * 2 + 2)
 
     metai = data_split[0][2:]
     menuo = data_split[1]
@@ -52,3 +44,9 @@ def asmens_kodo_generavimas(lytis, gimimo_data, eiles_numeris):
     be_paskutinio = pirmas_skaicius + metai + menuo + diena + eiles_numeris
 
     return int(be_paskutinio + str(grazinti_asmens_kodo_kontrolinį(be_paskutinio)))
+
+
+print(asmens_kodo_validacija(45102129987))
+print(asmens_kodo_validacija(61907108400))
+
+print(asmens_kodo_generavimas("vyras", "2000-12-12", "512"))
