@@ -1,7 +1,6 @@
 import math
 
 import logging
-logging.basicConfig(filename="uzduotis_15_2.log", level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
 logger = logging.getLogger(__name__)
 file_handler = logging.FileHandler('uzduotis_15_3.log')
