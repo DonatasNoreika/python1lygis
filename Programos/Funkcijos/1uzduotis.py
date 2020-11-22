@@ -51,31 +51,21 @@ print(stringas_atbulai("Donatas Noreika"))
 
 # 5. Atspausdintų, kiek paduotame stringe yra žodžių, didžiųjų ir mažųjų raidžių, skaičių.
 
-# def info_apie_sakini(stringas):
-#     print(f"Šiame sakinyje yra {len(stringas.split())} žodžių")
-#     didziosios = 0
-#     mazosios = 0
-#     skaiciai = 0
-#     for simbolis in stringas:
-#         if simbolis.isupper():
-#             didziosios += 1
-#         if simbolis.islower():
-#             mazosios += 1
-#         if simbolis.isnumeric():
-#             skaiciai += 1
-#     print(f"Didžiosios: {didziosios}, mažosios: {mazosios}, skaičiai: {skaiciai}")
-#
+def info_apie_sakini(stringas):
+    print(f"Šiame sakinyje yra {len(stringas.split())} žodžių")
+    didziosios = 0
+    mazosios = 0
+    skaiciai = 0
+    for simbolis in stringas:
+        if simbolis.isupper():
+            didziosios += 1
+        if simbolis.islower():
+            mazosios += 1
+        if simbolis.isnumeric():
+            skaiciai += 1
+    print(f"Didžiosios: {didziosios}, mažosios: {mazosios}, skaičiai: {skaiciai}")
 
-# arba
-
-def patikrinti_sakini(sakinys):
-    print("Žodžių kiekis:", len(sakinys.split()))
-    print("Skaičių kiekis:", sum(c.isdigit() for c in sakinys))
-    print("Didžiųjų raidžių:", sum(c.isupper() for c in sakinys))
-    print("Mažųjų raidžių:", sum(c.islower() for c in sakinys))
-
-
-patikrinti_sakini("Laba diena laba diena lab 522")
+info_apie_sakini("Laba diena laba diena lab 522")
 
 
 # 6. Gražintų sąrašą tik su unikaliais paduoto sąrašo elementais.
