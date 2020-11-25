@@ -17,7 +17,7 @@ print(len(zodziai))
 
 # zodziai = []
 
-# for i in range(0, 5):
+# for i in range(5):
     # zodziai.append(input("Įveskite žodį: "))
 
 # for zodis in zodziai:
