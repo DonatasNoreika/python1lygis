@@ -11,3 +11,19 @@ for x in range(3):
         break
 else:
     print("Laimėjai!")
+
+    
+# Alternatyva:
+
+# import random
+# 
+# num1 = random.randint(1, 6)
+# num2 = random.randint(1, 6)
+# num3 = random.randint(1, 6)
+# 
+# print(num1, num2, num3)
+# 
+# if num1 == 5 or num2 == 5 or num3 == 5:
+#     print("Plalaimėjai")
+# else:
+#     print("Laimėjai")
