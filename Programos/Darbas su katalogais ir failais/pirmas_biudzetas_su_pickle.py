@@ -5,15 +5,19 @@ while True:
         with open("biudzetas.pkl", "rb") as pickle_in:
             biudzetas = pickle.load(pickle_in)
             suma = 0
+            print("--------Įrašų sąrašas:---------")
             for skaicius, irasas in enumerate(biudzetas):
                 suma += irasas
-                print(skaicius, irasas)
+                print(skaicius + 1, irasas)
             print("Biudžeto balansas", suma)
+            print("-------------------------------")
     except:
         print("Nepavyko nuskaityti failo")
         biudzetas = []
-
-    irasas = float(input("Įveskite pajamas arba išlaidas"))
+    print("Norėdami palikite tuščią lauką ir spauskite ENTER")
+    irasas = float(input("Įveskite pajamas arba išlaidas: "))
+    if irasas == "":
+        break
     biudzetas.append(irasas)
 
     try:
@@ -21,8 +25,3 @@ while True:
             pickle.dump(biudzetas, pickle_out)
     except:
         print("Nepavyko įrašyti failo")
-    uzklausimas = input("Norite dar įvesti duomenų? taip/ne")
-    if uzklausimas == "taip":
-        continue
-    else:
-        break
