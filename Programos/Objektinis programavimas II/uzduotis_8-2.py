@@ -22,11 +22,10 @@ class NormalusDarbuotojas(Darbuotojas):
         nuo_kada_dirba = datetime.datetime.strptime(self.dirba_nuo, "%Y, %m, %d, %H, %M, %S")
         dabar = datetime.datetime.today()
         skirtumas = dabar - nuo_kada_dirba
-        return skirtumas.days / 7 * 5
+        return (skirtumas.days * 8) / 7 * 5
 
 
 donatas = Darbuotojas("Donatas", 10, "2019, 03, 12, 12, 00, 00")
-donatas.paskaiciuoti_atlyginima()
-
 donatas_normalus = NormalusDarbuotojas("Donatas", 10, "2019, 03, 12, 12, 00, 00")
+donatas.paskaiciuoti_atlyginima()
 donatas_normalus.paskaiciuoti_atlyginima()
