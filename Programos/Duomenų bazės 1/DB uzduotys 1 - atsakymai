@@ -11,3 +11,6 @@ INSERT INTO DARBUOTOJAI VALUES ("Jaunius", "Šindeikis", "1988-03-12", "Komandos
 INSERT INTO DARBUOTOJAI (VARDAS, PAVARDĖ, GIMIMO_DATA) VALUES ("Rimantas", "Kundrotas", "1987-11-12")
 UPDATE DARBUOTOJAI SET PAREIGOS = "Programuotojas", SKYRIUS_PAVADINIMAS = "Gamybos" WHERE VARDAS = "Rimantas" AND PAVARDĖ = "Kundrotas"
 DELETE FROM DARBUOTOJAI WHERE GIMIMO_DATA = "1987-11-12"
+INSERT INTO DARBUOTOJAI VALUES ("Jonas", "Antanaitis", "2000-12-12", "Programuotojas", "Gamybos"); INSERT INTO DARBUOTOJAI VALUES ("Petras", "Antanaitis", "2000-12-12", "Programuotojas", "Gamybos")
+UPDATE DARBUOTOJAI SET PAREIGOS = "Testuotojas" WHERE PAVARDĖ = "Antanaitis"
+SELECT count(*) from DARBUOTOJAI WHERE PAREIGOS = "Testuotojas"
