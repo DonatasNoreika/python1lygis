@@ -14,7 +14,7 @@ while True:
     except:
         print("Nepavyko nuskaityti failo")
         biudzetas = []
-    print("Norėdami palikite tuščią lauką ir spauskite ENTER")
+    print("Norėdami išeiti palikite tuščią lauką ir spauskite ENTER")
     irasas = float(input("Įveskite pajamas arba išlaidas: "))
     if irasas == "":
         break
