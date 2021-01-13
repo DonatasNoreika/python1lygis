@@ -1,5 +1,4 @@
 import pickle
-
 from tkinter import *
 
 langas = Tk()
@@ -55,13 +54,6 @@ class Biudzetas():
                 balansas -= irasas.suma
         return balansas
 
-    def gauti_ataskaita(self):
-        for irasas in self.gauti_biudzeta():
-            if isinstance(irasas, PajamuIrasas):
-                print(f"Pajamos: {irasas.suma} {irasas.siuntejas} {irasas.papildoma_info}")
-            if isinstance(irasas, IslaiduIrasas):
-                print(f"Išlaidos: {irasas.suma} {irasas.atsiskaitymo_budas} {irasas.isigyta_preke_paslauga}")
-
     def gauti_biudzeta(self):
         try:
             with open("biudzetas.pkl", "rb") as pickle_in:
@@ -101,6 +93,7 @@ def isvalyti():
     mano_biudzetas.irasyti_biudzeta(biudzetas)
     boksas.delete(0, END)
     balansas_uzrasas["text"] = ""
+
 
 langas.geometry("250x200")
 uzrasas1 = Label(virsus, text="Įrašykite sumą")
