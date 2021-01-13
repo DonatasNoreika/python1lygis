@@ -1,27 +1,20 @@
-
 # Patobulinti 1 užduoties programą, kad ji:
 # Įvedus vardą, atspausdintų "Labas, {vardas}!" ne tik nuspaudus mygtuką, bet ir paspaudus mygtuką "Enter"
 
 
 from tkinter import *
 
-import sys
-
 pagrindinis_langas = Tk()
-paskutinis = "Nebuvo įvesta"
 
-def pasisveikinti(event):
+def pasisveikinti():
     ivesta = ivedimas1.get()
     uzrasas2["text"] = (f"Labas, {ivesta}!")
-    global paskutinis
-    paskutinis = uzrasas2["text"]
 
 # Laukų, mygtukų formavimas
 uzrasas1 = Label(pagrindinis_langas, text="Įveskite vardą")
 ivedimas1 = Entry(pagrindinis_langas)
-mygtukas1 = Button(pagrindinis_langas, text="Patvirtinti")
-mygtukas1.bind("<Button-1>", pasisveikinti)
-ivedimas1.bind("<Return>", pasisveikinti)
+mygtukas1 = Button(pagrindinis_langas, text="Patvirtinti", command=pasisveikinti)
+ivedimas1.bind("<Return>", lambda event: pasisveikinti())
 uzrasas2 = Label(pagrindinis_langas, text="")
 
 # Lango piešimas
