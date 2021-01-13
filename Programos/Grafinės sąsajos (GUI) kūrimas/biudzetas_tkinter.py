@@ -1,9 +1,10 @@
 import pickle
-
 from tkinter import *
+
 langas = Tk()
 virsus = Frame(langas)
 apacia = Frame(langas)
+
 
 def gauti_biudzeta():
     try:
@@ -13,6 +14,7 @@ def gauti_biudzeta():
         biudzetas = []
     return biudzetas
 
+
 def irasyti_biudzeta(biudzetas):
     try:
         with open("biudzetas.pkl", "wb") as pickle_out:
@@ -20,12 +22,13 @@ def irasyti_biudzeta(biudzetas):
     except:
         print("Nepavyko įrašyti failo")
 
+
 def ivesti_irasa(event):
     suma = int(suma_laukas.get())
     biudzetas = gauti_biudzeta()
     biudzetas.append(suma)
     irasyti_biudzeta(biudzetas)
-    boksas.delete(0,END)
+    boksas.delete(0, END)
     boksas.insert(END, *gauti_biudzeta())
     balansas_uzrasas["text"] = str(sum(gauti_biudzeta()))
     suma_laukas.delete(0, 'end')
