@@ -27,3 +27,15 @@ else:
 #     print("Plalaimėjai")
 # else:
 #     print("Laimėjai")
+
+
+# Arba:
+# from random import randint
+
+# skaiciai = [randint(1,6), randint(1,6), randint(1,6)]
+# print(skaiciai)
+
+# if 5 in skaiciai:
+#     print("Pralaimėjai")
+# else:
+#     print("Laimėjai")
