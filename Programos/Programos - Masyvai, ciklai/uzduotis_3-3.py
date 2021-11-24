@@ -1,7 +1,5 @@
 
-
 zodziai = []
-
 ivedimas = (input("Įveskite žodį: "))
 
 while ivedimas != "":
@@ -9,8 +7,8 @@ while ivedimas != "":
     ivedimas = (input("Įveskite žodį: "))
 
 for zodis in zodziai:
-    print(zodis, len(zodis), zodziai.index(zodis) + 1)
-print(len(zodziai))
+    print(f"{zodziai.index(zodis) + 1}: {zodis}, simbolių kiekis: {len(zodis)}")
+print("Žodžių kiekis:", len(zodziai))
 
 
 # paprasčiau:
