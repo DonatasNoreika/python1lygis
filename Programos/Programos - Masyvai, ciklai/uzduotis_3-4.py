@@ -24,7 +24,7 @@ else:
 # print(num1, num2, num3)
 # 
 # if num1 == 5 or num2 == 5 or num3 == 5:
-#     print("Plalaimėjai")
+#     print("Pralaimėjai")
 # else:
 #     print("Laimėjai")
 
