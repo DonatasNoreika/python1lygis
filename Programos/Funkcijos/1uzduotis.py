@@ -25,7 +25,7 @@ print(saraso_suma(sarasas))
 # 3. Atspausdintų didžiausią iš kelių paduotų skaičių (panaudojant *args).
 
 # def didziausias_skaicius(*args):
-#     didziausias = 0
+#     didziausias = args[0]
 #     for sk in args:
 #         if sk > didziausias:
 #             didziausias = sk
