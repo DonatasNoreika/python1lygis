@@ -1,9 +1,6 @@
-from datetime import datetime
-
-pirmas = "Netuščias"
 tekstas = ""
 
-while pirmas != "":
+while True:
     pirmas = input("Įveskite eilutę: ")
     if pirmas != "":
         tekstas += pirmas + "\n"
