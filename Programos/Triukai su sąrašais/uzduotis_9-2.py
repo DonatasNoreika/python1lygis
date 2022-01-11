@@ -27,7 +27,7 @@ print(is_7)
 
 # Pakeltų visus sąrašo skaičius kvadratu ir atspausdintų
 
-# kvadratu = map(lambda x: x ** 2, skaiciai)
+# kvadratu = list(map(lambda x: x ** 2, skaiciai))
 # print(list(kvadratu))
 
 # arba
