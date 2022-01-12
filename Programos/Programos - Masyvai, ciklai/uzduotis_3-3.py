@@ -1,13 +1,13 @@
-
 zodziai = []
-ivedimas = (input("Įveskite žodį: "))
 
-while ivedimas != "":
-    zodziai.append(ivedimas)
+while True:
     ivedimas = (input("Įveskite žodį: "))
+    if ivedimas == "":
+        break
+    zodziai.append(ivedimas)
 
-for zodis in zodziai:
-    print(f"{zodziai.index(zodis) + 1}: {zodis}, simbolių kiekis: {len(zodis)}")
+for numeris, zodis in enumerate(zodziai):
+    print(f"{numeris + 1}: {zodis}, simbolių kiekis: {len(zodis)}")
 print("Žodžių kiekis:", len(zodziai))
 
 
