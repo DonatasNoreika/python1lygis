@@ -13,3 +13,12 @@ print("Praėjo dienų: ", skirtumas.days)
 print("Praėjo valandų: ", round(skirtumas.total_seconds() / 3600))
 print("Praėjo minučių: ", round(skirtumas.total_seconds() / 60))
 print("Praėjo sekundžių: ", round(skirtumas.total_seconds()))
+
+
+# jeigu norime laiko intervalą atvaizduoti taip, pvz:
+# praėjo 2 metai, 7 mėnesiai, 23 dienos ir t.t.
+# konsolėje: pip install python-dateutil
+
+# from dateutil.relativedelta import relativedelta
+# delta = relativedelta(datetime.datetime.now(), kazkokia_data)
+# print(f'metu: {res.years}, menesiu {res.months}, dienu {res.days}, valandu {res.hours}') ir t.t.
