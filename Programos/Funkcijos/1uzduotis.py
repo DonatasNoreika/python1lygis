@@ -80,6 +80,11 @@ def unikalus_sarasas(sarasas):
 
 print(unikalus_sarasas([4, 5, "Labas", 6, "Labas", True, 5, True, 10]))
 
+alternatyva:
+    
+def unique_only(*args):
+    return list(set(args))
+
 
 # 7. Gražintų, ar paduotas skaičius yra pirminis.
 
