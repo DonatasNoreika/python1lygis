@@ -88,19 +88,16 @@ def unique_only(*args):
 
 # 7. Gražintų, ar paduotas skaičius yra pirminis.
 
-def test_prime(n):
-    if (n == 1):
-        return False
-    elif (n == 2):
-        return True;
-    else:
-        for x in range(2, n):
-            if (n % x == 0):
+n= int(input("Įveskite skaičių "))
+def ar_pirminis(skaicius):
+    if skaicius > 1:
+        for num in range(2, skaicius):
+            if skaicius % num == 0:
                 return False
         return True
+    return False
 
-
-print(test_prime(5))
+print(ar_pirminis(n))
 
 
 # 8. Išrikiuotų paduoto stringo žodžius nuo paskutinio iki pirmojo
