@@ -1,4 +1,4 @@
-def grazinti_asmens_kodo_kontrolinį(asmens_kodas):
+def grazinti_ak_kontrolini(asmens_kodas):
     kodas = str(asmens_kodas)
     A = int(kodas[0])
     B = int(kodas[1])
@@ -23,7 +23,7 @@ def grazinti_asmens_kodo_kontrolinį(asmens_kodas):
 
 def asmens_kodo_validacija(asmens_kodas):
     paskutinis_sk = int(str(asmens_kodas)[-1])
-    return paskutinis_sk == grazinti_asmens_kodo_kontrolinį(asmens_kodas)
+    return paskutinis_sk == grazinti_ak_kontrolini(asmens_kodas)
 
 
 def asmens_kodo_generavimas(lytis, gimimo_data, eiles_numeris):
@@ -43,10 +43,11 @@ def asmens_kodo_generavimas(lytis, gimimo_data, eiles_numeris):
 
     be_paskutinio = pirmas_skaicius + metai + menuo + diena + eiles_numeris
 
-    return int(be_paskutinio + str(grazinti_asmens_kodo_kontrolinį(be_paskutinio)))
+    return int(be_paskutinio + str(grazinti_ak_kontrolini(be_paskutinio)))
 
 
 print(asmens_kodo_validacija(45102129987))
 print(asmens_kodo_validacija(61907108400))
 
 print(asmens_kodo_generavimas("vyras", "2000-12-12", "512"))
+print(asmens_kodo_generavimas("moteris", "1995-12-12", "500"))
