@@ -80,7 +80,7 @@ def unikalus_sarasas(sarasas):
 
 print(unikalus_sarasas([4, 5, "Labas", 6, "Labas", True, 5, True, 10]))
 
-alternatyva:
+# alternatyva:
     
 def unique_only(*args):
     return list(set(args))
