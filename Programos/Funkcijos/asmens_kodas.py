@@ -30,14 +30,13 @@ def asmens_kodo_generavimas(lytis, gimimo_data, eiles_numeris):
     pirmas_skaicius = ""
 
     data_split = gimimo_data.split("-")
-    metai = int(data_split[0][:2])
+    metai = data_split[0][:2]
 
     if lytis == "vyras":
         pirmas_skaicius = str((int(metai) - 18) * 2 + 1)
     else:
         pirmas_skaicius = str((int(metai) - 18) * 2 + 2)
 
-    metai = data_split[0][2:]
     menuo = data_split[1]
     diena = data_split[2]
 
