@@ -1,13 +1,10 @@
-tekstas = ""
-
 while True:
-    pirmas = input("Įveskite eilutę: ")
-    if pirmas != "":
-        tekstas += pirmas + "\n"
-    else:
+    ivestas = input("Įveskite tekstą: ")
+    tekstas += ivestas + "\n"
+    if not ivestas:
         break
 
-failo_pavadinimas = input("Įveskite failo pavadinimą: ")
+failo_pav = input("Įveskite failo pavadinimą")
 
-with open(failo_pavadinimas + ".txt", "w", encoding="UTF-8") as failas:
-    failas.write(tekstas)
+with open(f"{failo_pav}.txt", 'w') as file:
+    file.write(tekstas)
