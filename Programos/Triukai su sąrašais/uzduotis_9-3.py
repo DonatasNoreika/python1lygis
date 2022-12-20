@@ -24,10 +24,10 @@ print(" ".join(sakinys))
 # Suskaičiuotų ir atspausdintų, kiek sąrašę yra loginių (boolean)
 # kintamųjų su True reikšme
 
-# kiek = sum(filter(lambda x: type(x) is bool, sarasas))
-# print(kiek)
+# rezultatas = len(list(filter(lambda x: x == True, sarasas)))
+# print(rezultatas)
 
 # arba
 
-kiek = sum([type(x) is bool for x in sarasas])
-print(kiek)
+rezultatas = sum(x for x in sarasas if x == True)
+print(rezultatas)
