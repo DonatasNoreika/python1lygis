@@ -7,22 +7,22 @@ class Darbuotojas():
         self.dirba_nuo = dirba_nuo
 
 
-    def _kiek_dirba_valandu(self):
+    def _kiek_dirba_dienu(self):
         nuo_kada_dirba = datetime.datetime.strptime(self.dirba_nuo, "%Y, %m, %d, %H, %M, %S")
         dabar = datetime.datetime.today()
         skirtumas = dabar - nuo_kada_dirba
-        return skirtumas.days * 8
+        return skirtumas.days
 
     def paskaiciuoti_atlyginima(self):
-        atlyginimas = self.valandos_ikainis * self._kiek_dirba_valandu()
+        atlyginimas = self.valandos_ikainis * self._kiek_dirba_dienu() * 8
         print (self.vardas + " uždirbo " + str(atlyginimas))
 
 class NormalusDarbuotojas(Darbuotojas):
-    def _kiek_dirba_valandu(self):
+    def _kiek_dirba_dienu(self):
         nuo_kada_dirba = datetime.datetime.strptime(self.dirba_nuo, "%Y, %m, %d, %H, %M, %S")
         dabar = datetime.datetime.today()
         skirtumas = dabar - nuo_kada_dirba
-        return (skirtumas.days * 8) / 7 * 5
+        return skirtumas.days / 7 * 5
 
 
 donatas = Darbuotojas("Donatas", 10, "2019, 03, 12, 12, 00, 00")
