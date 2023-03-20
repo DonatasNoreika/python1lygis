@@ -1,31 +1,32 @@
 import datetime
 
-class Darbuotojas():
+
+class Darbuotojas:
     def __init__(self, vardas, valandos_ikainis, dirba_nuo):
+        """
+        Darbuotojo objektas
+        :param vardas: darbuotojo vardas
+        :param valandos_ikainis: darbo valandos įkainis
+        :param dirba_nuo: datą įvesti formatu: YYYY-MM-DD
+        """
         self.vardas = vardas
         self.valandos_ikainis = valandos_ikainis
-        self.dirba_nuo = dirba_nuo
+        self.dirba_nuo = datetime.datetime.strptime(dirba_nuo, "%Y-%m-%d")
 
-
-    def _kiek_dirba_dienu(self):
-        nuo_kada_dirba = datetime.datetime.strptime(self.dirba_nuo, "%Y, %m, %d, %H, %M, %S")
-        dabar = datetime.datetime.today()
-        skirtumas = dabar - nuo_kada_dirba
+    def _kiek_dienu(self):
+        skirtumas = datetime.datetime.today() - self.dirba_nuo
         return skirtumas.days
 
     def paskaiciuoti_atlyginima(self):
-        atlyginimas = self.valandos_ikainis * self._kiek_dirba_dienu() * 8
-        print (self.vardas + " uždirbo " + str(atlyginimas))
+        return self._kiek_dienu() * 8 * self.valandos_ikainis
+
 
 class NormalusDarbuotojas(Darbuotojas):
-    def _kiek_dirba_dienu(self):
-        nuo_kada_dirba = datetime.datetime.strptime(self.dirba_nuo, "%Y, %m, %d, %H, %M, %S")
-        dabar = datetime.datetime.today()
-        skirtumas = dabar - nuo_kada_dirba
-        return skirtumas.days / 7 * 5
+    def _kiek_dienu(self):
+        return super()._kiek_dienu() // 7 * 5
 
 
-donatas = Darbuotojas("Donatas", 10, "2019, 03, 12, 12, 00, 00")
-donatas_normalus = NormalusDarbuotojas("Donatas", 10, "2019, 03, 12, 12, 00, 00")
-donatas.paskaiciuoti_atlyginima()
-donatas_normalus.paskaiciuoti_atlyginima()
+darbuotojas1 = Darbuotojas("Jonas", 20, "2000-01-01")
+darbuotojas2 = NormalusDarbuotojas("Petras", 20, "2000-01-01")
+print(darbuotojas1.paskaiciuoti_atlyginima())
+print(darbuotojas2.paskaiciuoti_atlyginima())
