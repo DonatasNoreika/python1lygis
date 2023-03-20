@@ -1,3 +1,5 @@
+tekstas = ""
+
 while True:
     ivestas = input("Įveskite tekstą: ")
     tekstas += ivestas + "\n"
