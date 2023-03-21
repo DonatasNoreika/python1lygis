@@ -20,4 +20,4 @@ with open("data.txt", "w") as failas:
 os.chdir('C:\\Users\\Donoras\\Desktop\\Naujas katalogas')
 
 print("Sukūrimo data:", datetime.fromtimestamp(os.stat("data.txt").st_ctime))
-print("Failo dytis:", os.stat("data.txt").st_size)
+print("Failo dydis:", os.stat("data.txt").st_size)
