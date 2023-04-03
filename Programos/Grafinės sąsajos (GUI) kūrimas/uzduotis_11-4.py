@@ -8,54 +8,52 @@
 from tkinter import *
 
 langas = Tk()
-paskutinis = StringVar()
+issaugotas = StringVar()
+
 
 def pasisveikinti():
     ivesta = ivedimas1.get()
     uzrasas2["text"] = (f"Labas, {ivesta}!")
-    paskutinis.set(uzrasas2["text"])
-    status["text"] = "Sukurta"
+    status["text"] = "Pasisveikinta"
+
+
+def iseiti():
+    langas.destroy()
+
 
 def isvalyti():
+    ivesta = ivedimas1.get()
+    issaugotas.set(ivesta)
     uzrasas2["text"] = ""
+    ivedimas1.delete(0, END)
+    ivedimas1.focus()
     status["text"] = "Išvalyta"
 
 def atkurti():
-    uzrasas2["text"] = paskutinis.get()
+    ivedimas1.delete(0, END)
+    ivedimas1.insert(0, issaugotas.get())
+    pasisveikinti()
     status["text"] = "Atkurta"
-
-def uzdaryti():
-    langas.destroy()
 
 # Laukų, mygtukų formavimas
 uzrasas1 = Label(langas, text="Įveskite vardą")
 ivedimas1 = Entry(langas)
 mygtukas1 = Button(langas, text="Patvirtinti", command=pasisveikinti)
-ivedimas1.bind("<Return>", lambda event: pasisveikinti())
+langas.bind("<Return>", lambda e: pasisveikinti())
+langas.bind("<Escape>", lambda e: iseiti())
 uzrasas2 = Label(langas, text="")
-langas.bind("<Escape>", lambda event: uzdaryti())
-
-
-# Status juosta
 status = Label(langas, text="", bd=1, relief=SUNKEN, anchor=W)
 
-# Lango piešimas
-uzrasas1.grid(row=0, column=0)
-ivedimas1.grid(row=0, column=1)
-mygtukas1.grid(row=0, column=2)
-uzrasas2.grid(row=1, columnspan=3)
-status.grid(row=2, columnspan=3, sticky=W+E)
-
-# Meniu:
+# Meniu
 meniu = Menu(langas)
 langas.config(menu=meniu)
-submeniu = Menu(meniu, tearoff = 0)
+submeniu = Menu(meniu, tearoff=0)
 meniu.add_cascade(label="Meniu", menu=submeniu)
 
-submeniu.add_command(label="Išvalyti", command = isvalyti)
-submeniu.add_command(label="Atkurti paskutinį", command = atkurti)
+submeniu.add_command(label="Išvalyti", command=isvalyti)
+submeniu.add_command(label="Atkurti", command=atkurti)
 submeniu.add_separator()
-submeniu.add_command(label="Išeiti", command = uzdaryti)
+submeniu.add_command(label="Išeiti", command=iseiti)
 
 # Lango piešimas
 uzrasas1.grid(row=0, column=0)
