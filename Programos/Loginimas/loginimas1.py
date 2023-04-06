@@ -1,25 +1,32 @@
-import math
-
 import logging
-logging.basicConfig(filename="uzduotis_15_1.log", level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
+
+logging.basicConfig(filename="uzduotis1.log", encoding="UTF-8", level=logging.DEBUG, format='%(asctime)s:%(levelname)s:%(message)s')
 
 def suma(*args):
-    logging.info(f"Skaiciu {args} suma lygi: {sum(args)}")
-    return sum(args)
+    rezultatas = sum(args)
+    logging.info(f"funkcijos {suma.__name__} su argumentais {args} rezultatas {rezultatas}")
+    return rezultatas
 
-def saknis(x):
-    logging.info(f"Skaiciaus {x} saknis lygi {math.sqrt(x)}")
-    return math.sqrt(x)
 
-def simboliai(sakinys):
-    logging.info(f"Sakinio {sakinys} ilgis lygus {len(sakinys)} simboliu")
-    return len(sakinys)
+def saknis(skaicius):
+    rezultatas = skaicius ** 0.5
+    logging.info(f"funkcijos {saknis.__name__} su argumentu {skaicius} rezultatas {rezultatas}")
+    return rezultatas
 
-def dalyba(x, y):
-    logging.info(f"{x} padalinta is {y} lygu {x / y}")
-    return x / y
 
-print(suma(4, 5, 7, 8, 9, 9))
-print(saknis(49))
-print(simboliai("Labas vakaras"))
-print(dalyba(10, 5))
+def simboliu_kiekis(sakinys):
+    rezultatas = len(sakinys)
+    logging.info(f"funkcijos {simboliu_kiekis.__name__} su argumentu {sakinys} rezultatas {rezultatas}")
+    return rezultatas
+
+
+def daugyba(x, y):
+    rezultatas = x * y
+    logging.info(f"funkcijos {daugyba.__name__} su argumentais {x} ir {y} rezultatas {rezultatas}")
+    return rezultatas
+
+
+suma(5, 5, 4)
+saknis(9)
+simboliu_kiekis("Code Academy")
+daugyba(5, 4)
