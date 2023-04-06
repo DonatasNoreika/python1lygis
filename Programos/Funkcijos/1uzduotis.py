@@ -104,7 +104,7 @@ print(ar_pirminis(n))
 
 def isrikiuoti_nuo_galo(sakinys):
     zodziai = sakinys.split()[::-1]
-    return " # ".join(zodziai)
+    return " ".join(zodziai)
 
 
 print(isrikiuoti_nuo_galo("Vienas du trys keturi"))
