@@ -1,37 +1,40 @@
-import math
-
 import logging
-logging.basicConfig(filename="uzduotis_15_2.log", level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
+
+logging.basicConfig(filename="uzduotis2.log", encoding="UTF-8", level=logging.DEBUG, format='%(asctime)s:%(levelname)s:%(message)s')
 
 def suma(*args):
-    logging.info(f"Skaiciu {args} suma lygi: {sum(args)}")
-    return sum(args)
+    rezultatas = sum(args)
+    logging.info(f"funkcijos {suma.__name__} su argumentais {args} rezultatas {rezultatas}")
+    return rezultatas
 
-def saknis(x):
+
+def saknis(skaicius):
+    rezultatas = 0
     try:
-        rezultatas = math.sqrt(x)
+        rezultatas = skaicius ** 0.5
+        logging.info(f"funkcijos {saknis.__name__} su argumentu {skaicius} rezultatas {rezultatas}")
     except TypeError:
-        logging.exception("Saknis gali buti traukiama tik is skaiciaus")
-    else:
-        logging.info(f"Skaiciaus {x} saknis lygi {rezultatas}")
-        return rezultatas
+        logging.exception("Paduotas ne skaičius")
+    return rezultatas
 
-def simboliai(sakinys):
-    logging.info(f"Sakinio {sakinys} ilgis lygus {len(sakinys)} simboliu")
-    return len(sakinys)
+
+def simboliu_kiekis(sakinys):
+    rezultatas = len(sakinys)
+    logging.info(f"funkcijos {simboliu_kiekis.__name__} su argumentu {sakinys} rezultatas {rezultatas}")
+    return rezultatas
+
 
 def dalyba(x, y):
+    rezultatas = 0
     try:
         rezultatas = x / y
+        logging.info(f"funkcijos {dalyba.__name__} su argumentais {x} ir {y} rezultatas {rezultatas}")
     except ZeroDivisionError:
-        logging.exception("Dalyba is nulio")
-    else:
-        logging.info(f"{x} padalinta is {y} lygu {rezultatas}")
-        return rezultatas
+        logging.exception("Dalyba iš nulio negalima")
+    return rezultatas
 
 
-print(suma(4, 5, 7, 8, 9, 9))
-print(saknis("Donatas"))
-print(simboliai("Labas vakaras"))
-print(dalyba(10, 0))
-
+suma(5, 5, 4)
+saknis(9)
+simboliu_kiekis("Code Academy")
+dalyba(5, 0)
