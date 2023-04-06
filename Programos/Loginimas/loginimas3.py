@@ -50,4 +50,4 @@ def dalyba(x, y):
 suma(5, 5, 4)
 saknis(9)
 simboliu_kiekis("Code Academy")
-dalyba(5, 0)
+dalyba(5, 2)
