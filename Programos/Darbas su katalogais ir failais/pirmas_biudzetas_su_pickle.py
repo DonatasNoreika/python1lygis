@@ -1,27 +1,23 @@
 import pickle
 
-while True:
-    try:
-        with open("biudzetas.pkl", "rb") as pickle_in:
-            biudzetas = pickle.load(pickle_in)
-            suma = 0
-            print("--------Įrašų sąrašas:---------")
-            for skaicius, irasas in enumerate(biudzetas):
-                suma += irasas
-                print(skaicius + 1, irasas)
-            print("Biudžeto balansas", suma)
-            print("-------------------------------")
-    except:
-        print("Nepavyko nuskaityti failo")
-        biudzetas = []
-    print("Norėdami išeiti palikite tuščią lauką ir spauskite ENTER")
-    irasas = float(input("Įveskite pajamas arba išlaidas: "))
-    if irasas == "":
-        break
-    biudzetas.append(irasas)
+try:
+    with open("journal.pkl", 'rb') as file:
+        journal = pickle.load(file)
+except FileNotFoundError as err:
+    journal = []
 
-    try:
-        with open("biudzetas.pkl", "wb") as pickle_out:
-            pickle.dump(biudzetas, pickle_out)
-    except:
-        print("Nepavyko įrašyti failo")
+while True:
+    action = int(input("1 - add income/expences\n2 - view income/expences\n3 - show balance\n4 - exit\n"))
+    match action:
+        case 1:
+            number = float(input("Enter income/expence: "))
+            journal.append(number)
+            with open("journal.pkl", 'wb') as file:
+                pickle.dump(journal, file)
+        case 2:
+            print(journal)
+        case 3:
+            print("Balance:", sum(journal))
+        case 4:
+            print("Good bye")
+            break
