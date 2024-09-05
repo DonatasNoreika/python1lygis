@@ -27,7 +27,7 @@ def revert():
     status_label['text'] = "atkurta"
 
 
-def exit():
+def prog_exit():
     window.quit()
 
 
@@ -36,18 +36,18 @@ label1 = Label(window, text="Įveskite vardą: ")
 entry1 = Entry(window)
 button1 = Button(window, text="Patvirtinti", command=greet)
 window.bind("<Return>", lambda e: greet())
-window.bind("<Escape>", lambda e: exit())
+window.bind("<Escape>", lambda e: prog_exit())
 label_result = Label(window, text="")
 status_label = Label(window, text="", bd=1, relief=SUNKEN, anchor=W)
 
 # menus
 my_menu = Menu(window)
 window.config(menu=my_menu)
-submeniu = Menu(my_menu, tearoff=0)
-my_menu.add_cascade(label="Menu", menu=submeniu)
-submeniu.add_command(label="Išvalyti", command=clear_ui)
-submeniu.add_command(label="Atkurti", command=revert)
-submeniu.add_command(label="Išeiti", command=exit)
+submenu = Menu(my_menu, tearoff=0)
+my_menu.add_cascade(label="Menu", menu=submenu)
+submenu.add_command(label="Išvalyti", command=clear_ui)
+submenu.add_command(label="Atkurti", command=revert)
+submenu.add_command(label="Išeiti", command=prog_exit)
 
 # packing
 label1.grid(row=0, column=0)
