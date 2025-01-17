@@ -1,4 +1,25 @@
 def gauti_ak_kontrolini(asmens_kodas: str | int) -> int:
+    a, b, c, d, e, f, g, h, i, j = map(int, list(str(asmens_kodas)[:-1]))
+    S = a * 1 + b * 2 + c * 3 + d * 4 + e * 5 + f * 6 + g * 7 + h * 8 + i * 9 + j * 1
+    if S % 11 != 10:
+        return S % 11
+    else:
+        S = a * 3 + b * 4 + c * 5 + d * 6 + e * 7 + f * 8 + g * 9 + h * 1 + i * 2 + j * 3
+        if S % 11 != 10:
+            return S % 11
+        else:
+            return 0
+
+
+def ar_ak_validus(asmens_kodas: str | int) -> bool:
+    return int(str(asmens_kodas)[-1]) == gauti_ak_kontrolini(asmens_kodas)
+
+
+print(ar_ak_validus(45212265291))
+print(ar_ak_validus(43311245363))
+
+
+def gauti_ak_kontrolini(asmens_kodas: str | int) -> int:
     a, b, c, d, e, f, g, h, i, j = map(int, list(str(asmens_kodas)[:10]))
     S = a * 1 + b * 2 + c * 3 + d * 4 + e * 5 + f * 6 + g * 7 + h * 8 + i * 9 + j * 1
     if S % 11 != 10:
