@@ -14,6 +14,23 @@ print("Praėjo valandų: ", round(skirtumas.total_seconds() / 3600))
 print("Praėjo minučių: ", round(skirtumas.total_seconds() / 60))
 print("Praėjo sekundžių: ", round(skirtumas.total_seconds()))
 
+veikianti alternatyva su papildoma biblioteka (pagaliau!!):
+# pip install pendulum
+
+import pendulum
+
+dt1 = pendulum.datetime(2025, 5, 26, 15, 14, 29)
+dt2 = pendulum.datetime(2000, 1, 1, 0, 0, 0)
+
+diff = dt1.diff(dt2)
+
+print("Years:", diff.in_years())
+print("Months:", diff.in_months())   # total months
+print("Weeks:", diff.in_weeks())     # total weeks
+print("Days:", diff.in_days())       # total days
+print("Hours:", diff.in_hours())       # total hours
+print("Minutes:", diff.in_minutes())       # total minutes
+print("Seconds:", diff.in_seconds())       # total seconds
 
 # jeigu norime laiko intervalą atvaizduoti taip, pvz:
 # praėjo 2 metai, 7 mėnesiai, 23 dienos ir t.t.
